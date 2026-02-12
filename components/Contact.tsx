@@ -1,50 +1,106 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faPhone,
+  faEnvelope,
+  faLocationDot,
+  faUser,
+  faCommentDots,
+} from "@fortawesome/free-solid-svg-icons";
+
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 bg-gradient-to-b from-gray-50 to-gray-100">
-      <div className="max-w-4xl mx-auto px-6 text-center">
-        {/* Section Header */}
-        <h3 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
-          Contact Us
-        </h3>
-        <p className="text-gray-600 mb-12 text-lg md:text-xl">
-          Have any questions or need our services? Send us a message and we'll get back to you promptly.
-        </p>
+    <section id="contact" className="py-24 bg-gradient-to-br from-gray-50 via-white to-gray-100">
+      <div className="max-w-6xl mx-auto px-6">
 
-        {/* Form Container */}
-        <div className="bg-white p-10 md:p-12 rounded-2xl shadow-xl border border-gray-200 hover:shadow-2xl transition duration-300">
-          <form className="grid gap-6">
-            <input
-              type="text"
-              placeholder="Your Name"
-              className="p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400 transition"
-            />
-            <input
-              type="tel"
-              placeholder="Phone Number"
-              className="p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400 transition"
-            />
-            <textarea
-              placeholder="Your Message"
-              rows={5}
-              className="p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400 transition"
-            />
-            <button className="bg-gradient-to-r from-blue-600 to-blue-500 text-white py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-blue-600 shadow-lg hover:shadow-xl transition duration-300">
-              Send Request
-            </button>
-          </form>
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h3 className="text-4xl md:text-5xl font-extrabold text-gray-900">
+            Let’s Talk
+          </h3>
+          <p className="text-gray-600 mt-4 text-lg">
+            Need generator services? Send us a message today.
+          </p>
         </div>
 
-        {/* Contact Info */}
-        <div className="mt-12 text-gray-700 space-y-3 text-sm md:text-base">
-          <p className="flex items-center justify-center gap-2">
-            <span className="text-blue-500 text-lg">📍</span> DHA Phase 2 Ext, Karachi
-          </p>
-          <p className="flex items-center justify-center gap-2">
-            <span className="text-blue-500 text-lg">📞</span> 0311-2447774 | 0344-2553442
-          </p>
-          <p className="flex items-center justify-center gap-2">
-            <span className="text-blue-500 text-lg">📧</span> hitcgeneratorservice@gmail.com
-          </p>
+        {/* Grid Layout */}
+        <div className="grid md:grid-cols-2 gap-12">
+
+          {/* Left Side - Contact Info */}
+          <div className="bg-gradient-to-br from-blue-600 to-blue-500 text-white p-10 rounded-3xl shadow-2xl relative overflow-hidden">
+            <h4 className="text-2xl font-bold mb-8">Contact Information</h4>
+
+            <div className="space-y-6 text-lg">
+
+              <div className="flex items-center gap-4">
+                <FontAwesomeIcon icon={faLocationDot} className="text-2xl" />
+                <p>DHA Phase 2 Ext, Karachi</p>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <FontAwesomeIcon icon={faPhone} className="text-2xl" />
+                <p>0311-2447774 | 0344-2553442</p>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <FontAwesomeIcon icon={faEnvelope} className="text-2xl" />
+                <p>hitcgeneratorservice@gmail.com</p>
+              </div>
+
+            </div>
+
+            <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+          </div>
+
+          {/* Right Side - Form */}
+          <div className="bg-white p-10 rounded-3xl shadow-xl border border-gray-200">
+            <form className="space-y-6">
+
+              {/* Name */}
+              <div className="relative">
+                <FontAwesomeIcon
+                  icon={faUser}
+                  className="absolute top-5 left-4 text-gray-400"
+                />
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  className="w-full pl-12 pr-4 py-4 rounded-xl placeholder:text-gray-400 border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition"
+                />
+              </div>
+
+              {/* Phone */}
+              <div className="relative">
+                <FontAwesomeIcon
+                  icon={faPhone}
+                  className="absolute top-5 left-4 text-gray-400"
+                />
+                <input
+                  type="tel"
+                  placeholder="Phone Number"
+                  className="w-full pl-12 pr-4 py-4 rounded-xl placeholder:text-gray-400 border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition"
+                />
+              </div>
+
+              {/* Message */}
+              <div className="relative">
+                <FontAwesomeIcon
+                  icon={faCommentDots}
+                  className="absolute top-5 left-4 text-gray-400"
+                />
+                <textarea
+                  rows={5}
+                  placeholder="Your Message"
+                  className="w-full pl-12 pr-4 py-4 placeholder:text-gray-400 rounded-xl border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none resize-none transition"
+                />
+              </div>
+
+              <button className="w-full bg-gradient-to-r from-blue-600 to-blue-500 text-white py-4 rounded-xl font-semibold shadow-lg hover:shadow-2xl hover:scale-[1.02] transition duration-300">
+                Send Message
+              </button>
+
+            </form>
+          </div>
+
         </div>
       </div>
     </section>

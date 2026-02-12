@@ -1,41 +1,208 @@
+// "use client";
+// import Link from "next/link";
+// import Image from "next/image"; // <-- import Image component
+// import { useState } from "react";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faPhone, faBars, faX, faHouse, faInfoCircle, faCogs, faBuilding } from "@fortawesome/free-solid-svg-icons";
+// import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+
+// export default function Navbar() {
+//   const [isOpen, setIsOpen] = useState(false);
+
+//   const menuItems = [
+//     { name: "services", icon: faCogs },
+//     { name: "brands", icon: faBuilding },
+//     { name: "about", icon: faInfoCircle },
+//     { name: "contact", icon: faPhone },
+//   ];
+
+//   return (
+//     <nav className="fixed top-0 w-full z-50 bg-white shadow-md">
+//       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+//         {/* Logo Image */}
+//         <Link href="/">
+//           <div className="cursor-pointer hover:scale-105 transition-transform duration-300">
+//             <Image
+//               src="/images/rashid-engineering-logo.png" // <-- aap ka logo path
+//               alt="Rashid Engineering Logo"
+//               width={100} // width adjust karen apne design ke hisab se
+//               height={40} // height adjust karen apne design ke hisab se
+//               priority // ye logo ko fast load karne ke liye
+//             />
+//           </div>
+//         </Link>
+
+//         {/* Desktop Menu */}
+//         <div className="hidden md:flex gap-8 items-center text-gray-700 font-medium">
+//           {menuItems.map((item) => (
+//             <Link
+//               key={item.name}
+//               href={`#${item.name}`}
+//               className="flex items-center gap-2 font-bold relative group capitalize hover:text-blue-600 transition"
+//             >
+//               <FontAwesomeIcon icon={item.icon} />
+//               {item.name}
+//               <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+//             </Link>
+//           ))}
+
+//           {/* Call Button */}
+//           <a
+//             href="tel:03112447774"
+//             className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2.5 rounded-full shadow-lg flex items-center gap-2 hover:scale-105 transition-transform duration-300"
+//           >
+//             <FontAwesomeIcon icon={faPhone} />
+//             Call Now
+//           </a>
+
+//           {/* WhatsApp Button */}
+//           <a
+//             href="https://wa.me/923112447774"
+//             target="_blank"
+//             className="bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-2.5 rounded-full shadow-lg flex items-center gap-2 hover:scale-105 transition-transform duration-300"
+//           >
+//             <FontAwesomeIcon icon={faWhatsapp} />
+//             WhatsApp
+//           </a>
+//         </div>
+
+//         {/* Mobile Menu Button */}
+//         <button
+//           className="md:hidden text-2xl text-gray-700"
+//           onClick={() => setIsOpen(!isOpen)}
+//         >
+//           <FontAwesomeIcon icon={isOpen ? faX : faBars} />
+//         </button>
+//       </div>
+
+//       {/* Mobile Dropdown */}
+//       <div
+//         className={`md:hidden overflow-hidden transition-all duration-500 ${
+//           isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+//         }`}
+//       >
+//         <div className="bg-white shadow-xl border-t border-gray-200 flex flex-col items-center gap-6 py-8 text-lg font-medium">
+//           {menuItems.map((item) => (
+//             <Link
+//               key={item.name}
+//               href={`#${item.name}`}
+//               onClick={() => setIsOpen(false)}
+//               className="flex items-center gap-3 text-gray-500 hover:text-blue-600 transition"
+//             >
+//               <FontAwesomeIcon icon={item.icon} />
+//               {item.name}
+//             </Link>
+//           ))}
+
+//           <a
+//             href="tel:03112447774"
+//             className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-full shadow-md transition flex items-center gap-2 hover:scale-105"
+//           >
+//             <FontAwesomeIcon icon={faPhone} />
+//             Call Now
+//           </a>
+
+//           <a
+//             href="https://wa.me/923112447774"
+//             target="_blank"
+//             className="bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-full shadow-md transition flex items-center gap-2 hover:scale-105"
+//           >
+//             <FontAwesomeIcon icon={faWhatsapp} />
+//             WhatsApp
+//           </a>
+//         </div>
+//       </div>
+//     </nav>
+//   );
+// }
+
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone, faBars, faX } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPhone,
+  faBars,
+  faX,
+  faCogs,
+  faBuilding,
+  faInfoCircle,
+} from "@fortawesome/free-solid-svg-icons";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const menuItems = [
+    { name: "services", icon: faCogs },
+    { name: "brands", icon: faBuilding },
+    { name: "about", icon: faInfoCircle },
+    { name: "contact", icon: faPhone },
+  ];
+
   return (
-    <nav className="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-lg transition duration-300">
+    <nav className="fixed top-0 w-full z-50 bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        
-        {/* Logo */}
-        <h1 className="text-2xl md:text-3xl font-bold text-blue-700 tracking-wide">
-          Rashid Engineering
-        </h1>
+        {/* Logo Image */}
+        {/* <Link href="/">
+          <div className="flex items-center cursor-pointer">
+            <Image
+             src="/images/rashid-engineering-logo.png"
+              alt="Rashid Engineering Logo"
+              width={180} // adjust width
+              height={10} // adjust height
+              className="object-contain"
+              priority
+            />
+          </div>
+        </Link> */}
+
+        <Link href="/">
+          <div className="flex items-center h-12 md:h-12 cursor-pointer">
+            <Image
+              src="/images/company-logo.jpeg"
+              alt="Rashid Engineering Logo"
+              width={180} // logo width desktop ke liye
+              height={70} // logo height
+              className="object-contain h-full"
+              priority
+            />
+          </div>
+        </Link>
+
+        {/* <Link href="/">
+  <div className="flex items-center h-14 cursor-pointer">
+    <Image
+      src="/images/rashid-engineering-logo.png" 
+      alt="Rashid Engineering Logo"
+      width={200}       // desktop width
+      height={100}       // height chhota rakhen taake navbar bara na ho
+      className="object-contain h-full"
+      priority
+    />
+  </div>
+</Link> */}
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex gap-8 text-gray-700 font-medium items-center">
-          <Link href="#services" className="hover:text-blue-600 transition">
-            Services
-          </Link>
-          <Link href="#brands" className="hover:text-blue-600 transition">
-            Brands
-          </Link>
-          <Link href="#about" className="hover:text-blue-600 transition">
-            About
-          </Link>
-          <Link href="#contact" className="hover:text-blue-600 transition">
-            Contact
-          </Link>
+        <div className="hidden md:flex gap-8 items-center text-gray-700 font-medium">
+          {menuItems.map((item) => (
+            <Link
+              key={item.name}
+              href={`#${item.name}`}
+              className="flex items-center gap-2 font-bold relative group capitalize hover:text-blue-600 transition"
+            >
+              <FontAwesomeIcon icon={item.icon} />
+              {item.name}
+              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+            </Link>
+          ))}
 
           {/* Call Button */}
           <a
             href="tel:03112447774"
-            className="bg-blue-700 text-white px-5 py-2 rounded-xl hover:bg-blue-800 shadow-lg flex items-center gap-2 transition"
+            className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2.5 rounded-full shadow-lg flex items-center gap-2 hover:scale-105 transition-transform duration-300"
           >
             <FontAwesomeIcon icon={faPhone} />
             Call Now
@@ -45,7 +212,7 @@ export default function Navbar() {
           <a
             href="https://wa.me/923112447774"
             target="_blank"
-            className="bg-green-500 text-white px-5 py-2 rounded-xl hover:bg-green-600 shadow-lg flex items-center gap-2 transition"
+            className="bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-2.5 rounded-full shadow-lg flex items-center gap-2 hover:scale-105 transition-transform duration-300"
           >
             <FontAwesomeIcon icon={faWhatsapp} />
             WhatsApp
@@ -57,49 +224,32 @@ export default function Navbar() {
           className="md:hidden text-2xl text-gray-700"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? (
-            <FontAwesomeIcon icon={faX} />
-          ) : (
-            <FontAwesomeIcon icon={faBars} />
-          )}
+          <FontAwesomeIcon icon={isOpen ? faX : faBars} />
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-md shadow-lg w-full text-center py-6 flex flex-col gap-6">
-          <Link
-            href="#services"
-            onClick={() => setIsOpen(false)}
-            className="hover:text-blue-600 transition text-lg font-medium"
-          >
-            Services
-          </Link>
-          <Link
-            href="#brands"
-            onClick={() => setIsOpen(false)}
-            className="hover:text-blue-600 transition text-lg font-medium"
-          >
-            Brands
-          </Link>
-          <Link
-            href="#about"
-            onClick={() => setIsOpen(false)}
-            className="hover:text-blue-600 transition text-lg font-medium"
-          >
-            About
-          </Link>
-          <Link
-            href="#contact"
-            onClick={() => setIsOpen(false)}
-            className="hover:text-blue-600 transition text-lg font-medium"
-          >
-            Contact
-          </Link>
+      {/* Mobile Dropdown */}
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-500 ${
+          isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="bg-white shadow-xl border-t border-gray-200 flex flex-col items-center gap-6 py-8 text-lg font-medium">
+          {menuItems.map((item) => (
+            <Link
+              key={item.name}
+              href={`#${item.name}`}
+              onClick={() => setIsOpen(false)}
+              className="flex items-center gap-3 text-gray-500 hover:text-blue-600 transition"
+            >
+              <FontAwesomeIcon icon={item.icon} />
+              {item.name}
+            </Link>
+          ))}
 
           <a
             href="tel:03112447774"
-            className="bg-blue-700 text-white px-6 py-2 rounded-xl hover:bg-blue-800 shadow-lg transition flex items-center justify-center gap-2 text-lg font-semibold"
+            className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-full shadow-md transition flex items-center gap-2 hover:scale-105"
           >
             <FontAwesomeIcon icon={faPhone} />
             Call Now
@@ -107,13 +257,14 @@ export default function Navbar() {
 
           <a
             href="https://wa.me/923112447774"
-            className="bg-green-500 text-white px-6 py-2 rounded-xl hover:bg-green-600 shadow-lg transition flex items-center justify-center gap-2 text-lg font-semibold"
+            target="_blank"
+            className="bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-full shadow-md transition flex items-center gap-2 hover:scale-105"
           >
             <FontAwesomeIcon icon={faWhatsapp} />
             WhatsApp
           </a>
         </div>
-      )}
+      </div>
     </nav>
   );
 }
