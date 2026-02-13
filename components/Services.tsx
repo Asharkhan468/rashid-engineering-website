@@ -98,7 +98,7 @@ export default function Hero() {
       </h3>
 
       <div className="flex flex-wrap justify-center gap-8">
-        {["perkins", "honda", "cummins", "CAT"].map((brand) => (
+        {["perkins", "honda", "Cummins", "CAT"].map((brand) => (
           <div
             key={brand}
             className="bg-white w-36 h-36 flex items-center justify-center rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100"
