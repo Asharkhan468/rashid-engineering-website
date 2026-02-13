@@ -8,8 +8,18 @@ import {
   faTools,
 } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
+import { motion, Variants } from "framer-motion";
 
 export default function AboutOne() {
+  const featureVariants:Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.2, type: "spring", stiffness: 80 },
+    }),
+  };
+
   return (
     <section
       id="About"
@@ -32,8 +42,14 @@ export default function AboutOne() {
 
         {/* Content */}
         <div className="mt-20 grid lg:grid-cols-2 gap-16 items-center">
-          {/* Image */}
-          <div className="relative group">
+          {/* Image with animation */}
+          <motion.div
+            className="relative group"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8 }}
+          >
             <div className="overflow-hidden rounded-2xl shadow-xl">
               <Image
                 src="/images/engineering works.jpg"
@@ -43,7 +59,7 @@ export default function AboutOne() {
                 className="object-cover w-full h-[450px] group-hover:scale-105 transition duration-700"
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* Features */}
           <div className="grid sm:grid-cols-2 gap-8">
@@ -69,8 +85,13 @@ export default function AboutOne() {
                 desc: "Advanced tools for accurate solutions.",
               },
             ].map((item, index) => (
-              <div
+              <motion.div
                 key={index}
+                custom={index}
+                variants={featureVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
                 className="group bg-white p-6 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2 text-center sm:text-left"
               >
                 <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-blue-50 group-hover:bg-blue-600 transition duration-300 mx-auto sm:mx-0">
@@ -85,7 +106,7 @@ export default function AboutOne() {
                 </h3>
 
                 <p className="text-gray-600 mt-2">{item.desc}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
