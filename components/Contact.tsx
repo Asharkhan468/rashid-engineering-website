@@ -9,7 +9,7 @@ import {
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 bg-gradient-to-br from-gray-50 via-white to-gray-100">
+    <section id="Contact" className="py-24 bg-gradient-to-br from-gray-50 via-white to-gray-100">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}

@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-   <section id="services" className="relative bg-gradient-to-b from-gray-50 to-white pt-32 pb-24">
+   <section id="Services" className="relative bg-gradient-to-b from-gray-50 to-white pt-32 pb-24">
   <div className="max-w-7xl mx-auto px-6">
 
     {/* Section Heading */}
@@ -21,72 +21,78 @@ export default function Hero() {
       </p>
     </div>
 
-    {/* Services Grid */}
-    <div className="mt-20 grid md:grid-cols-3 gap-10">
+<div className="mt-20 grid md:grid-cols-3 gap-10">
 
-      {/* Card */}
-      <div className="group bg-white p-8 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2">
-        <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-blue-50 group-hover:bg-blue-600 transition duration-300">
-          <FontAwesomeIcon
-            icon={faWrench}
-            className="text-blue-600 group-hover:text-white text-xl transition duration-300"
-          />
-        </div>
-
-        <h3 className="text-2xl font-bold text-gray-900 mt-6 mb-4">
-          Generator Repairing
-        </h3>
-
-        <ul className="text-gray-600 space-y-2">
-          <li>Diesel & Petrol Generators</li>
-          <li>Residential & Commercial Generators</li>
-          <li>Emergency Breakdown Services</li>
-        </ul>
-      </div>
-
-      {/* Card */}
-      <div className="group bg-white p-8 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2">
-        <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-blue-50 group-hover:bg-blue-600 transition duration-300">
-          <FontAwesomeIcon
-            icon={faTools}
-            className="text-blue-600 group-hover:text-white text-xl transition duration-300"
-          />
-        </div>
-
-        <h3 className="text-2xl font-bold text-gray-900 mt-6 mb-4">
-          Generator Maintenance
-        </h3>
-
-        <ul className="text-gray-600 space-y-2">
-          <li>Monthly & Annual Maintenance Contracts</li>
-          <li>Engine Overhauling</li>
-          <li>Load Testing</li>
-        </ul>
-      </div>
-
-      {/* Card */}
-      <div className="group bg-white p-8 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2">
-        <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-blue-50 group-hover:bg-blue-600 transition duration-300">
-          <FontAwesomeIcon
-            icon={faCogs}
-            className="text-blue-600 group-hover:text-white text-xl transition duration-300"
-          />
-        </div>
-
-        <h3 className="text-2xl font-bold text-gray-900 mt-6 mb-4">
-          Generator Installation
-        </h3>
-
-        <ul className="text-gray-600 space-y-2">
-          <li>New Generator Installation</li>
-          <li>Wiring & ATS Installation</li>
-          <li>Noise Reduction Solutions</li>
-        </ul>
-      </div>
+  {/* Card 1 */}
+  <div className="group bg-white p-8 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2 text-center md:text-left">
+    
+    <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-blue-50 group-hover:bg-blue-600 transition duration-300 mx-auto md:mx-0">
+      <FontAwesomeIcon
+        icon={faWrench}
+        className="text-blue-600 group-hover:text-white text-xl transition duration-300"
+      />
     </div>
 
+    <h3 className="text-2xl font-bold text-gray-900 mt-6 mb-4">
+      Generator Repairing
+    </h3>
+
+    <ul className="text-gray-600 space-y-2">
+      <li>Diesel & Petrol Generators</li>
+      <li>Residential & Commercial Generators</li>
+      <li>Emergency Breakdown Services</li>
+    </ul>
+  </div>
+
+
+  {/* Card 2 */}
+  <div className="group bg-white p-8 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2 text-center md:text-left">
+    
+    <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-blue-50 group-hover:bg-blue-600 transition duration-300 mx-auto md:mx-0">
+      <FontAwesomeIcon
+        icon={faTools}
+        className="text-blue-600 group-hover:text-white text-xl transition duration-300"
+      />
+    </div>
+
+    <h3 className="text-2xl font-bold text-gray-900 mt-6 mb-4">
+      Generator Maintenance
+    </h3>
+
+    <ul className="text-gray-600 space-y-2">
+      <li>Monthly & Annual Maintenance Contracts</li>
+      <li>Engine Overhauling</li>
+      <li>Load Testing</li>
+    </ul>
+  </div>
+
+
+  {/* Card 3 */}
+  <div className="group bg-white p-8 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2 text-center md:text-left">
+    
+    <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-blue-50 group-hover:bg-blue-600 transition duration-300 mx-auto md:mx-0">
+      <FontAwesomeIcon
+        icon={faCogs}
+        className="text-blue-600 group-hover:text-white text-xl transition duration-300"
+      />
+    </div>
+
+    <h3 className="text-2xl font-bold text-gray-900 mt-6 mb-4">
+      Generator Installation
+    </h3>
+
+    <ul className="text-gray-600 space-y-2">
+      <li>New Generator Installation</li>
+      <li>Wiring & ATS Installation</li>
+      <li>Noise Reduction Solutions</li>
+    </ul>
+  </div>
+
+</div>
+
+
     {/* Brands Section */}
-    <div className="mt-28 text-center" id="brands">
+    <div className="mt-28 text-center" id="Brands">
       <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10">
         Brands We Deal In
       </h3>
